@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Send, MessageSquare } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
+import { Textarea } from "@/components/ui/Textarea";
+import { Card, CardContent } from "@/components/ui/ProjectCard";
 
 export const Contact = () => {
   const socialLinks = [
