@@ -6,13 +6,13 @@ export const About = () => {
     {
       title: "Education",
       icon: GraduationCap,
-      description: "First-year Computer Science student at a leading university. Learning the fundamentals of algorithms, data structures, and software engineering.",
+      description: "Computer Science student focused on building impactful technology solutions.",
       color: "text-indigo-400",
     },
     {
       title: "Skills",
       icon: Code,
-      description: "Proficient in C, C++, and Java. Currently mastering React, TypeScript, and modern web development frameworks.",
+      description: "Proficient in Python, C, and C++. Currently expanding expertise in Fullstack development and Web technologies.",
       color: "text-cyan-400",
     },
     {
@@ -59,9 +59,9 @@ export const About = () => {
       >
         <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">About Me</h2>
         <p className="text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-          I'm a dedicated student on a mission to explore the intersection of 
-          technology and creativity. My journey in tech is driven by curiosity 
-          and a desire to build things that matter.
+          I'm Yadhavi MRK, a dedicated student on a mission to explore the intersection of 
+          technology and automation. My journey in tech is driven by curiosity 
+          and a desire to build real-world solutions that solve complex problems.
         </p>
       </motion.div>
 

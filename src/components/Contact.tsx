@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin, Send, MessageSquare } from "lucide-react";
 
 export const Contact = () => {
   const socialLinks = [
-    { icon: Mail, href: "mailto:hello@example.com", label: "Email", color: "text-indigo-400" },
+    { icon: Mail, href: "mailto:yadhaviyadhavi19@gmail.com", label: "Email", color: "text-indigo-400" },
     { icon: Github, href: "#", label: "GitHub", color: "text-white" },
     { icon: Linkedin, href: "#", label: "LinkedIn", color: "text-cyan-400" },
   ];
@@ -110,6 +110,15 @@ export const Contact = () => {
               </p>
             </div>
             <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-6 p-6 rounded-2xl bg-white/5 border border-white/10">
+                <div className="p-4 rounded-xl bg-white/5 text-indigo-400">
+                  <Mail className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-white/40 uppercase tracking-widest">Phone</p>
+                  <p className="text-lg font-semibold text-white/80">+91 93423 81687</p>
+                </div>
+              </div>
               {socialLinks.map((link) => (
                 <a
                   key={link.label}

@@ -4,31 +4,22 @@ import { Github, ExternalLink, Code2, Globe } from "lucide-react";
 export const Projects = () => {
   const projects = [
     {
-      title: "AI Chatbot Platform",
-      description: "A real-time AI chatbot application built with React, Node.js, and OpenAI API. Features include multi-model support and persistent chat history.",
-      image: "https://picsum.photos/seed/ai-chatbot/800/600",
-      tags: ["React", "Node.js", "OpenAI", "Socket.io"],
+      title: "GeoAttend",
+      description: "A location-based teacher attendance system that allows attendance marking only within campus using geolocation and geofencing, eliminating biometric dependency and improving reliability. Built using HTML, CSS, JavaScript, Firebase, and deployed on Vercel.",
+      image: "https://picsum.photos/seed/geo-attend/800/600",
+      tags: ["HTML", "CSS", "JavaScript", "Firebase", "Vercel"],
       github: "#",
       demo: "#",
       color: "from-indigo-500/20 to-cyan-500/20",
     },
     {
-      title: "E-Commerce Dashboard",
-      description: "A comprehensive dashboard for managing e-commerce stores. Includes real-time analytics, inventory management, and order tracking.",
-      image: "https://picsum.photos/seed/dashboard/800/600",
-      tags: ["Next.js", "TypeScript", "Tailwind", "Prisma"],
+      title: "Ghost Classroom AI",
+      description: "CCTV-Based Attendance System. Built an AI-powered system that uses CCTV video to automatically detect and recognize students, enabling real-time attendance without biometric devices or manual effort. The system processes live video, records attendance with timestamps, and generates reports.",
+      image: "https://picsum.photos/seed/ai-classroom/800/600",
+      tags: ["AI", "CCTV", "Python", "Computer Vision"],
       github: "#",
       demo: "#",
       color: "from-violet-500/20 to-pink-500/20",
-    },
-    {
-      title: "Crypto Tracker App",
-      description: "A mobile-responsive web app for tracking cryptocurrency prices and market trends. Features live price updates and interactive charts.",
-      image: "https://picsum.photos/seed/crypto/800/600",
-      tags: ["React", "Chart.js", "CoinGecko API", "Firebase"],
-      github: "#",
-      demo: "#",
-      color: "from-cyan-500/20 to-indigo-500/20",
     },
   ];
 

@@ -50,16 +50,16 @@ export const Hero = () => {
           variants={itemVariants}
           className="text-5xl md:text-8xl font-display font-extrabold tracking-tight mb-6"
         >
-          Inspired by <br />
-          <span className="text-gradient">Endless Possibilities</span>
+          Yadhavi <br />
+          <span className="text-gradient">MRK</span>
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
           className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed font-light"
         >
-          Creating my path in technology through innovative design and 
-          cutting-edge development. Exploring the future, one line of code at a time.
+          A passionate developer exploring the future of technology through 
+          innovative solutions in AI and Web Development.
         </motion.p>
 
         <motion.div

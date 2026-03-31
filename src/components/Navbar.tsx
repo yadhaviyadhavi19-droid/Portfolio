@@ -31,7 +31,7 @@ export const Navbar = () => {
           isScrolled ? "bg-black/40 border-white/10" : "bg-transparent border-transparent"
         }`}>
           <a href="#home" className="text-xl font-display font-bold tracking-tighter">
-            STUDENT<span className="text-indigo-500">.</span>
+            YADHAVI<span className="text-indigo-500">.</span>
           </a>
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
