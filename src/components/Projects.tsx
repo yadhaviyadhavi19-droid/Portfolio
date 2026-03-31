@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink, Code2, Globe } from "lucide-react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/badge";
 
 export const Projects = () => {

@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin, Send, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/Card";
 
 export const Contact = () => {
   const socialLinks = [

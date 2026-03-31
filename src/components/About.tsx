@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Code, Rocket, Heart } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/Card";
 
 export const About = () => {
   const cards = [
