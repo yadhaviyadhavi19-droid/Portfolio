@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Code, Rocket, Heart } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/ProjectCard";
 
 export const About = () => {
   const cards = [
@@ -75,8 +74,8 @@ export const About = () => {
       >
         {cards.map((card) => (
           <motion.div key={card.title} variants={itemVariants}>
-            <Card className="glass border-white/5 hover:border-white/20 transition-all duration-500 group h-full">
-              <CardContent className="p-8 flex flex-col items-center text-center">
+            <div className="glass border border-white/5 hover:border-white/20 transition-all duration-500 group h-full rounded-3xl overflow-hidden">
+              <div className="p-8 flex flex-col items-center text-center">
                 <div className={`p-4 rounded-2xl bg-white/5 mb-6 group-hover:scale-110 transition-transform duration-500 ${card.color}`}>
                   <card.icon className="w-8 h-8" />
                 </div>
@@ -84,8 +83,8 @@ export const About = () => {
                 <p className="text-sm text-white/50 leading-relaxed">
                   {card.description}
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </motion.div>
         ))}
       </motion.div>

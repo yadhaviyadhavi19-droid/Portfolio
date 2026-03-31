@@ -1,9 +1,5 @@
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Send, MessageSquare } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
-import { Textarea } from "@/components/ui/Textarea";
-import { Card, CardContent } from "@/components/ui/ProjectCard";
 
 export const Contact = () => {
   const socialLinks = [
@@ -55,8 +51,8 @@ export const Contact = () => {
         className="grid grid-cols-1 lg:grid-cols-2 gap-12"
       >
         <motion.div variants={itemVariants}>
-          <Card className="glass border-white/5 p-10 rounded-3xl h-full">
-            <CardContent className="p-0">
+          <div className="glass border border-white/5 p-10 rounded-3xl h-full">
+            <div className="p-0">
               <div className="flex items-center gap-6 mb-10">
                 <div className="p-4 rounded-2xl bg-white/5 text-indigo-400">
                   <MessageSquare className="w-8 h-8" />
@@ -67,24 +63,38 @@ export const Contact = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-white/60 ml-1">Name</label>
-                    <Input placeholder="Your Name" className="bg-white/5 border-white/10 rounded-xl h-12 focus:ring-indigo-500 focus:border-indigo-500" />
+                    <input 
+                      type="text"
+                      placeholder="Your Name" 
+                      className="w-full bg-white/5 border border-white/10 rounded-xl h-12 px-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all" 
+                    />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-white/60 ml-1">Email</label>
-                    <Input placeholder="Your Email" className="bg-white/5 border-white/10 rounded-xl h-12 focus:ring-indigo-500 focus:border-indigo-500" />
+                    <input 
+                      type="email"
+                      placeholder="Your Email" 
+                      className="w-full bg-white/5 border border-white/10 rounded-xl h-12 px-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all" 
+                    />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-white/60 ml-1">Message</label>
-                  <Textarea placeholder="Your Message" className="bg-white/5 border-white/10 rounded-2xl min-h-[150px] focus:ring-indigo-500 focus:border-indigo-500" />
+                  <textarea 
+                    placeholder="Your Message" 
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl min-h-[150px] p-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all resize-none" 
+                  />
                 </div>
-                <Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-12 text-base font-semibold shadow-lg shadow-indigo-500/20 flex items-center gap-2">
+                <button 
+                  type="submit"
+                  className="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl h-12 text-base font-semibold shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-2 transition-all duration-300"
+                >
                   <Send className="w-4 h-4" />
                   Send Message
-                </Button>
+                </button>
               </form>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div

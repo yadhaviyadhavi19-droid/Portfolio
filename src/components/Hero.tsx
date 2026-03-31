@@ -1,7 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, Sparkles } from "lucide-react";
-import { Badge } from "@/components/ui/Badge";
-import { Button } from "@/components/ui/Button";
 
 export const Hero = () => {
   const { scrollYProgress } = useScroll();
@@ -42,10 +40,10 @@ export const Hero = () => {
           variants={itemVariants}
           className="mb-8"
         >
-          <Badge variant="outline" className="px-4 py-1.5 bg-white/5 border-white/10 text-indigo-400 font-medium tracking-wide flex items-center gap-2 mx-auto w-fit">
+          <div className="px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-indigo-400 text-xs font-medium tracking-wide flex items-center gap-2 mx-auto w-fit">
             <Sparkles className="w-3.5 h-3.5" />
             First Year CSE Student
-          </Badge>
+          </div>
         </motion.div>
 
         <motion.h1
@@ -68,15 +66,11 @@ export const Hero = () => {
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a href="#projects">
-            <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 h-12 text-base font-semibold shadow-lg shadow-indigo-500/20">
-              View My Work
-            </Button>
+          <a href="#projects" className="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 h-12 text-base font-semibold shadow-lg shadow-indigo-500/20 transition-all duration-300">
+            View My Work
           </a>
-          <a href="#contact">
-            <Button variant="outline" size="lg" className="border-white/10 hover:bg-white/5 text-white rounded-full px-8 h-12 text-base font-semibold">
-              Contact Me
-            </Button>
+          <a href="#contact" className="inline-flex items-center justify-center border border-white/10 hover:bg-white/5 text-white rounded-full px-8 h-12 text-base font-semibold transition-all duration-300">
+            Contact Me
           </a>
         </motion.div>
       </motion.div>

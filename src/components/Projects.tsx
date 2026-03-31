@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink, Code2, Globe } from "lucide-react";
-import { Card, CardContent, CardFooter } from "@/components/ui/ProjectCard";
-import { Badge } from "@/components/ui/Badge";
 
 export const Projects = () => {
   const projects = [
@@ -78,7 +76,7 @@ export const Projects = () => {
       >
         {projects.map((project) => (
           <motion.div key={project.title} variants={itemVariants}>
-            <Card className="glass border-white/5 hover:border-white/20 transition-all duration-500 group overflow-hidden h-full flex flex-col">
+            <div className="glass border border-white/5 hover:border-white/20 transition-all duration-500 group overflow-hidden h-full flex flex-col rounded-3xl">
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={project.image}
@@ -88,28 +86,28 @@ export const Projects = () => {
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-60`} />
               </div>
-              <CardContent className="p-8 flex-grow">
+              <div className="p-8 flex-grow">
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="bg-white/5 text-white/60 border-white/10 text-[10px] uppercase tracking-wider">
+                    <span key={tag} className="px-2 py-1 rounded-md bg-white/5 text-white/60 border border-white/10 text-[10px] uppercase tracking-wider">
                       {tag}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
                 <h3 className="text-2xl font-display font-bold mb-4">{project.title}</h3>
                 <p className="text-sm text-white/50 leading-relaxed">
                   {project.description}
                 </p>
-              </CardContent>
-              <CardFooter className="p-8 pt-0 flex items-center gap-4">
+              </div>
+              <div className="p-8 pt-0 flex items-center gap-4">
                 <a href={project.github} className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:text-indigo-400 transition-all duration-300">
                   <Github className="w-5 h-5" />
                 </a>
                 <a href={project.demo} className="p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:text-cyan-400 transition-all duration-300">
                   <ExternalLink className="w-5 h-5" />
                 </a>
-              </CardFooter>
-            </Card>
+              </div>
+            </div>
           </motion.div>
         ))}
       </motion.div>
