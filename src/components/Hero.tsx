@@ -68,12 +68,16 @@ export const Hero = () => {
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 h-12 text-base font-semibold shadow-lg shadow-indigo-500/20">
-            View My Work
-          </Button>
-          <Button variant="outline" size="lg" className="border-white/10 hover:bg-white/5 text-white rounded-full px-8 h-12 text-base font-semibold">
-            Contact Me
-          </Button>
+          <a href="#projects">
+            <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 h-12 text-base font-semibold shadow-lg shadow-indigo-500/20">
+              View My Work
+            </Button>
+          </a>
+          <a href="#contact">
+            <Button variant="outline" size="lg" className="border-white/10 hover:bg-white/5 text-white rounded-full px-8 h-12 text-base font-semibold">
+              Contact Me
+            </Button>
+          </a>
         </motion.div>
       </motion.div>
 
