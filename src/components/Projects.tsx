@@ -34,13 +34,32 @@ export const Projects = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="projects" className="py-24 px-6 max-w-7xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={itemVariants}
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Featured Projects</h2>
@@ -50,15 +69,15 @@ export const Projects = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, i) => (
-          <motion.div
-            key={project.title}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.6 }}
-          >
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        {projects.map((project) => (
+          <motion.div key={project.title} variants={itemVariants}>
             <Card className="glass border-white/5 hover:border-white/20 transition-all duration-500 group overflow-hidden h-full flex flex-col">
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -93,7 +112,7 @@ export const Projects = () => {
             </Card>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -34,8 +34,17 @@
     scroll-behavior: smooth;
   }
 
+  section {
+    scroll-margin-top: 100px;
+  }
+
   body {
-    @apply bg-[#030303] text-white font-sans antialiased overflow-x-hidden;
+    @apply bg-[#030303] text-white font-sans antialiased overflow-x-hidden m-0 p-0;
+  }
+
+  #root {
+    min-height: 100vh;
+    background-color: #030303;
   }
 
   * {

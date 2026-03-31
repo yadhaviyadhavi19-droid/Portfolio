@@ -30,13 +30,32 @@ export const About = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="about" className="py-24 px-6 max-w-7xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={itemVariants}
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">About Me</h2>
@@ -47,15 +66,15 @@ export const About = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {cards.map((card, i) => (
-          <motion.div
-            key={card.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.5 }}
-          >
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+      >
+        {cards.map((card) => (
+          <motion.div key={card.title} variants={itemVariants}>
             <Card className="glass border-white/5 hover:border-white/20 transition-all duration-500 group h-full">
               <CardContent className="p-8 flex flex-col items-center text-center">
                 <div className={`p-4 rounded-2xl bg-white/5 mb-6 group-hover:scale-110 transition-transform duration-500 ${card.color}`}>
@@ -69,7 +88,7 @@ export const About = () => {
             </Card>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

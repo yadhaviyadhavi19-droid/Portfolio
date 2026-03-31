@@ -12,13 +12,32 @@ export const Contact = () => {
     { icon: Linkedin, href: "#", label: "LinkedIn", color: "text-cyan-400" },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="contact" className="py-24 px-6 max-w-7xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={itemVariants}
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Let's Connect</h2>
@@ -28,13 +47,14 @@ export const Contact = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+      >
+        <motion.div variants={itemVariants}>
           <Card className="glass border-white/5 p-10 rounded-3xl h-full">
             <CardContent className="p-0">
               <div className="flex items-center gap-6 mb-10">
@@ -68,10 +88,7 @@ export const Contact = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          variants={itemVariants}
           className="flex flex-col justify-center"
         >
           <div className="space-y-12">
@@ -101,7 +118,7 @@ export const Contact = () => {
             </div>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };

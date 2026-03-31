@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
@@ -8,12 +8,23 @@ import { Contact } from "@/components/Contact";
 import { BackgroundBlobs } from "@/components/BackgroundBlobs";
 
 function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
     <div className="relative min-h-screen bg-[#030303] text-white selection:bg-indigo-500/30 selection:text-indigo-200">
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-violet-500 to-cyan-500 z-[100] origin-left"
+        style={{ scaleX }}
+      />
       <BackgroundBlobs />
       <Navbar />
       
-      <main className="relative z-10">
+      <main className="relative z-10 flex flex-col gap-12 md:gap-24">
         <Hero />
         <About />
         <Skills />

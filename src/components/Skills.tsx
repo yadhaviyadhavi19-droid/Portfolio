@@ -33,13 +33,32 @@ export const Skills = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <section id="skills" className="py-24 px-6 max-w-7xl mx-auto">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={itemVariants}
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Technical Arsenal</h2>
@@ -49,14 +68,17 @@ export const Skills = () => {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {skillCategories.map((category, i) => (
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+      >
+        {skillCategories.map((category) => (
           <motion.div
             key={category.title}
-            initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.6 }}
+            variants={itemVariants}
             className={`glass p-10 rounded-3xl bg-gradient-to-br ${category.color} border-white/5 hover:border-white/20 transition-all duration-500 group`}
           >
             <div className="flex items-center gap-6 mb-8">
@@ -77,7 +99,7 @@ export const Skills = () => {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

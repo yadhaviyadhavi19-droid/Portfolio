@@ -1,21 +1,45 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
+  const yScroll = useTransform(scrollYProgress, [0, 0.2], [0, -50]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section id="home" className="relative h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 py-20">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        style={{ opacity, scale, y: yScroll }}
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
         className="z-10"
       >
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
+          variants={itemVariants}
           className="mb-8"
         >
           <Badge variant="outline" className="px-4 py-1.5 bg-white/5 border-white/10 text-indigo-400 font-medium tracking-wide flex items-center gap-2 mx-auto w-fit">
@@ -25,9 +49,7 @@ export const Hero = () => {
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          variants={itemVariants}
           className="text-5xl md:text-8xl font-display font-extrabold tracking-tight mb-6"
         >
           Inspired by <br />
@@ -35,9 +57,7 @@ export const Hero = () => {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
+          variants={itemVariants}
           className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed font-light"
         >
           Creating my path in technology through innovative design and 
@@ -45,9 +65,7 @@ export const Hero = () => {
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
+          variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white rounded-full px-8 h-12 text-base font-semibold shadow-lg shadow-indigo-500/20">
